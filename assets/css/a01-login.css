@@ -1,0 +1,168 @@
+/* =====================================================================
+   a01-login.css — A01 Login (index.html) only.
+   Sizes from design/specs/A01.md (frame 1414 x 960 px).
+   ===================================================================== */
+
+.login-page { display: flex; min-height: 100vh; }
+
+/* ---------- Left: product story ---------- */
+.story {
+  width: 56.58%;                 /* 800 of 1414 px */
+  flex-shrink: 0;
+  min-height: 960px;
+  position: relative;
+  overflow: hidden;
+  padding: 48px 56px;
+  background: var(--navy);
+}
+
+.promise { display: flex; flex-direction: column; gap: 18px; max-width: 600px; padding-top: 88px; }
+.overline { font-family: var(--font-mono); font-size: 11.5px; line-height: 15px; letter-spacing: 0.14em; color: var(--teal); }
+.story-title { font-weight: 600; font-size: 50px; line-height: 53px; letter-spacing: -0.035em; color: var(--white); }
+.story-text { max-width: 520px; font-size: 16px; line-height: 26px; color: rgba(255, 255, 255, 0.72); }
+
+/* Heartbeat box: 700 x 290 px, 32 px above the bottom */
+.signal { position: absolute; bottom: 32px; inset-inline-start: 0; width: 700px; height: 290px; }
+.signal > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.signal-grid line { stroke: rgba(255, 255, 255, 0.06); stroke-width: 1; }
+.signal-line path { fill: none; stroke: var(--teal); stroke-width: 2.2; stroke-miterlimit: 12; }
+
+/* The three small result cards on the heartbeat */
+.insight {
+  position: absolute;
+  display: flex; align-items: center; gap: 10px;
+  height: 54px; padding-inline: 10px 14px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+}
+.insight-1 { inset-inline-start: 80px; top: 8px; }
+.insight-2 { inset-inline-start: 430px; top: 60px; }
+.insight-3 { inset-inline-start: 300px; top: 208px; }
+
+.insight-icon {
+  width: 30px; height: 30px; flex-shrink: 0; border-radius: 9px;
+  display: grid; place-items: center;
+  font-family: var(--font-latin); font-weight: 600; font-size: 16px; color: var(--navy);
+}
+.insight-icon svg { width: 16px; height: 16px; }
+.insight-icon.teal { background: var(--teal); }
+.insight-icon.lavender { background: var(--lavender); }
+.insight-icon.mint { background: var(--mint); }
+.insight-copy { display: flex; flex-direction: column; gap: 2px; }
+.insight-title { font-weight: 600; font-size: 13px; line-height: 17px; color: var(--white); }
+.insight-note { font-size: 11.5px; line-height: 15px; color: rgba(255, 255, 255, 0.62); }
+
+/* ---------- Right: sign-in form ---------- */
+.signin {
+  flex: 1;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 96px;
+}
+.top-lang { position: absolute; top: 48px; inset-inline-end: 56px; height: 30px; }
+
+.login-form { width: 100%; max-width: 422px; display: flex; flex-direction: column; gap: 22px; }
+
+.welcome { display: flex; flex-direction: column; gap: 8px; }
+.welcome-title { font-weight: 600; font-size: 28px; line-height: 36px; }
+.welcome-text { font-size: 14px; line-height: 18px; color: var(--muted); }
+
+.login-error {
+  padding: 10px 14px; border-radius: 10px;
+  font-size: 13px; line-height: 17px;
+  background: var(--coral-light); color: var(--coral-dark);
+}
+
+.sso-button {                   /* "Create an account" button */
+  width: 100%; height: 46px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-weight: 600; font-size: 14px;
+  background: var(--white); border: 1px solid var(--border-strong); border-radius: 11px;
+}
+.sso-icon { width: 17px; height: 17px; color: var(--navy); }
+.forgot-note { margin-top: 8px; font-size: 12.5px; line-height: 17px; color: var(--muted); }
+
+/* "or with work email" with a line on each side */
+.divider { display: flex; align-items: center; gap: 12px; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.divider span { font-size: 12px; line-height: 16px; color: var(--faint); }
+
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field-label { font-weight: 600; font-size: 13px; line-height: 17px; }
+.input-box {
+  height: 46px; padding: 0 14px;
+  display: flex; align-items: center; gap: 10px;
+  background: var(--white); border: 1px solid var(--border-strong); border-radius: 11px;
+}
+.input-box:focus-within { border-color: var(--teal); }
+.input-box input {
+  flex: 1; min-width: 0; height: 100%;
+  border: 0; outline: 0; background: transparent; padding: 0;
+  font-family: var(--font-latin); font-size: 14px;
+}
+.input-box input::placeholder { color: var(--muted); }
+[dir="rtl"] .input-box input { text-align: right; }
+
+.input-icon { width: 17px; flex-shrink: 0; text-align: center; color: var(--muted); }
+.input-icon.at { font-family: var(--font-latin); font-weight: 600; font-size: 17px; }
+.input-icon.dot::before {                     /* the grey dot of the password field */
+  content: ""; display: block; margin: 0 auto;
+  width: 12.5px; height: 12.5px; border-radius: 50%; background: var(--muted);
+}
+
+.options-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+/* Checkbox: the real box is hidden, we draw our own teal box */
+.checkbox { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.checkbox input { position: absolute; opacity: 0; }
+.checkbox-box {
+  width: 16px; height: 16px; border-radius: 4px;
+  display: grid; place-items: center;
+  background: var(--white); border: 1px solid var(--border-strong); color: transparent;
+}
+.checkbox-box svg { width: 11px; height: 11px; }
+.checkbox input:checked + .checkbox-box { background: var(--teal); border-color: var(--teal); color: var(--white); }
+.checkbox-label { font-size: 13px; line-height: 17px; color: var(--muted); }
+.forgot-link { font-size: 13px; line-height: 17px; color: var(--teal-dark); }
+.forgot-note { margin-top: 0; }
+.forgot-link:hover { text-decoration: underline; }
+
+/* Main button (no shadow: the design image shows none, docs/DECISIONS.md D-05) */
+.enter-button {
+  width: 100%; height: 50px; padding-inline: 8px 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--navy); border-radius: 12px;
+}
+.enter-button:hover { background: var(--navy2); }
+.enter-label { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; color: var(--white); }
+.enter-pulse { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--teal); color: var(--navy); }
+.enter-pulse svg { width: 18px; height: 18px; }
+.enter-arrow { width: 18px; height: 18px; color: var(--mint); }
+
+.trust-box {
+  display: flex; flex-direction: column; gap: 10px; padding: 16px;
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+}
+.trust-title { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 13px; line-height: 17px; }
+.trust-icon { width: 16px; height: 16px; color: var(--teal-dark); }
+.trust-text { font-size: 12.5px; line-height: 19px; color: var(--muted); }
+
+.security-note { font-family: var(--font-mono); font-size: 11px; line-height: 14px; letter-spacing: 0.04em; color: var(--faint); }
+
+/* ---------- Arabic ---------- */
+[lang="ar"] .overline,
+[lang="ar"] .story-title,
+[lang="ar"] .security-note { font-family: var(--font-arabic); letter-spacing: 0; }
+[lang="ar"] .story-title { font-size: 46px; line-height: 64px; }
+[dir="rtl"] .signal > svg { direction: ltr; }   /* the chart is not mirrored */
+
+/* ---------- Small screens: the two halves go under each other ---------- */
+@media (max-width: 900px) {
+  .login-page { flex-direction: column; }
+  .story { width: auto; min-height: 0; padding: 32px 24px 330px; }
+  .story-title { font-size: 38px; line-height: 42px; }
+  .signin { padding: 72px 20px 40px; }
+  .top-lang { top: 20px; inset-inline-end: 20px; }
+}

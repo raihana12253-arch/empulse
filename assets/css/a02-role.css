@@ -1,0 +1,96 @@
+/* =====================================================================
+   a02-role.css — A02 Role Routing (pages/role.html) only.
+   Sizes from design/specs/A02.md (frame 1440 x 760 px).
+   ===================================================================== */
+
+.role-page { max-width: 1440px; margin: 0 auto; padding: 40px 72px; }
+
+/* ---------- Top: logo + "Back to sign in" ---------- */
+.top-bar { display: flex; align-items: center; justify-content: space-between; height: 30px; }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; line-height: 17px; color: var(--teal-dark); }
+.back-link:hover { text-decoration: underline; }
+.back-icon { width: 15px; height: 15px; }
+[dir="rtl"] .back-icon { transform: scaleX(-1); }
+
+/* ---------- Title block ---------- */
+.intro { display: flex; flex-direction: column; align-items: center; gap: 12px; padding-top: 48px; text-align: center; }
+.overline { font-family: var(--font-mono); font-weight: 500; font-size: 11px; line-height: 14px; letter-spacing: 0.08em; color: var(--teal-dark); }
+.title { font-weight: 600; font-size: 40px; line-height: 52px; letter-spacing: -0.03em; }
+.intro-text { max-width: 680px; font-size: 15px; line-height: 23px; color: var(--muted); }
+
+/* ---------- The three cards ---------- */
+.cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding-top: 40px; }
+
+.card {
+  min-height: 410px;
+  display: flex; flex-direction: column; gap: 16px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-raised);
+}
+
+.card-top { display: flex; align-items: center; justify-content: space-between; height: 24px; }
+.badge {
+  padding: 4px 8px; border-radius: 6px;
+  font-weight: 600; font-size: 12px; line-height: 16px;
+  background: var(--teal-light); color: var(--teal-dark);
+}
+.badge-slate { background: var(--surface3); color: var(--navy); }
+.card-icon { width: 22px; height: 22px; color: var(--teal-dark); }
+.icon-navy { color: var(--navy); }
+.icon-teal { color: var(--teal); }
+
+.person { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid var(--white);
+  font-weight: 600; font-size: 15px; color: var(--navy);
+}
+.avatar-layla { background: var(--violet-light); border-color: var(--teal); }
+.avatar-yasmin { background: var(--peach); }
+.avatar-rana { background: var(--border-blue); }
+.person-name { font-weight: 600; font-size: 18px; line-height: 23px; }
+.person-title { margin-top: 2px; font-size: 13px; line-height: 17px; color: var(--muted); }
+
+.question { font-weight: 600; font-size: 20px; line-height: 26px; }
+
+/* Focus / Data scope / Starts at / Feel: two columns */
+.details {
+  display: grid; grid-template-columns: 79px 1fr;
+  padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: 13px; line-height: 25px;
+}
+[lang="ar"] .details { grid-template-columns: max-content 1fr; column-gap: 16px; }
+
+.continue { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; font-weight: 600; font-size: 14px; line-height: 18px; color: var(--teal-dark); }
+.continue svg { width: 16px; height: 16px; }
+.continue:hover span { text-decoration: underline; }
+
+/* Small note under "Continue" while the home screen is not built yet */
+.soon-note { font-size: 12.5px; line-height: 17px; color: var(--muted); }
+.card-dark .soon-note { color: rgba(255, 255, 255, 0.7); }
+
+/* Dark card (HR & Executive) */
+.card-dark { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.card-dark .person-title { color: rgba(255, 255, 255, 0.7); }
+.card-dark .details { border-top-color: rgba(255, 255, 255, 0.14); }
+.card-dark .continue { color: var(--teal); }
+
+/* ---------- Bottom line ---------- */
+.summary { display: flex; justify-content: center; flex-wrap: wrap; gap: 36px; padding-top: 28px; }
+.summary p { font-size: 13px; line-height: 17px; color: var(--muted); }
+
+/* ---------- Arabic ---------- */
+[lang="ar"] .overline,
+[lang="ar"] .title { font-family: var(--font-arabic); letter-spacing: 0; }
+
+/* ---------- Small screens: one card per row ---------- */
+@media (max-width: 1100px) {
+  .role-page { padding: 32px 20px; }
+  .cards { grid-template-columns: 1fr; }
+  .card { min-height: 0; }
+  .title { font-size: 32px; line-height: 40px; }
+}

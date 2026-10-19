@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- pages/role.html — A02 Role Routing (after sign-in).
+     Design: design/png/A02.jpg
+     Style:  assets/css/shared.css + assets/css/a02-role.css
+     Code:   assets/js/shared.js  + assets/js/a02-role.js -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choose your experience · EMPULSE</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/shared.css">
+  <link rel="stylesheet" href="../assets/css/a02-role.css">
+  <script src="../assets/js/shared.js"></script>
+</head>
+<body data-title="a02.page_title">
+
+<main class="role-page">
+
+  <header class="top-bar">
+    <span class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </span>
+      <span class="brand-name" dir="ltr">EMPULSE</span>
+    </span>
+    <a href="#" id="back-link" class="back-link">
+      <!-- "↩" drawn as the small boxed symbol of the design image -->
+      <svg class="back-icon" viewBox="0 0 16 16"><rect x="0.5" y="0.5" width="15" height="15" rx="3.2" fill="#7f95ad"/><path d="M5.6 6.2h4.1a2.3 2.3 0 0 1 0 4.6H7.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><path d="M7.3 4.4 5.3 6.2l2 1.8" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="a02.back">Back to sign in</span>
+    </a>
+  </header>
+
+  <section class="intro">
+    <p class="overline" data-i18n="a02.overline">AFTER SIGN-IN · ROLE ROUTING</p>
+    <h1 class="title" data-i18n="a02.title">One platform. Three experiences.</h1>
+    <p class="intro-text" data-i18n="a02.description">EMPULSE reads your role from company SSO and opens the experience built for it — with its own navigation, data scope and decisions. Pick a demo account to follow its route.</p>
+  </section>
+
+  <section class="cards">
+
+    <!-- Employee -->
+    <article class="card" data-card="employee" data-demo="layla">
+      <div class="card-top">
+        <span class="badge" data-i18n="a02.emp_badge">EMPLOYEE</span>
+        <svg class="card-icon" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M9.6 13.3c-.6.8-1.6 1.3-2.7 1.3a3.2 3.2 0 1 1 .9-6.3 3.4 3.4 0 1 1 6.4 0 3.2 3.2 0 1 1 .9 6.3c-1.1 0-2.1-.5-2.7-1.3.1 1.9.6 3.4 1.6 4.4H8c1-1 1.5-2.5 1.6-4.4Z"/></svg>
+      </div>
+      <div class="person">
+        <span class="avatar avatar-layla" dir="ltr">LH</span>
+        <div>
+          <p class="person-name" dir="ltr">Layla Haddad</p>
+          <p class="person-title" data-i18n="a02.emp_title">Senior Data Analyst</p>
+        </div>
+      </div>
+      <p class="question" data-i18n="a02.emp_question">“How am I doing, and how can I grow?”</p>
+      <dl class="details">
+        <dt data-i18n="a02.label_focus">Focus</dt><dd data-i18n="a02.emp_focus">Myself</dd>
+        <dt data-i18n="a02.label_scope">Data scope</dt><dd data-i18n="a02.emp_scope">Own data only</dd>
+        <dt data-i18n="a02.label_starts">Starts at</dt><dd data-i18n="a02.emp_starts">My Overview</dd>
+        <dt data-i18n="a02.label_feel">Feel</dt><dd data-i18n="a02.emp_feel">Personal · calm · motivational</dd>
+      </dl>
+      <a href="#" class="continue">
+        <span data-i18n="a02.emp_continue">Continue as Layla</span>
+        <svg class="flip-in-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="soon-note" data-i18n="a02.soon_note" hidden>This screen is built in the next phase.</p>
+    </article>
+
+    <!-- Manager -->
+    <article class="card" data-card="manager" data-demo="yasmin">
+      <div class="card-top">
+        <span class="badge badge-slate" data-i18n="a02.mgr_badge">MANAGER</span>
+        <svg class="card-icon icon-navy" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M11 3.6a1.5 1.5 0 0 0-.9 2.7A2.6 2.6 0 0 0 9.5 11c-2.4.9-3.9 3.3-3.9 6.4v.8h10.8v-.8c0-3.1-1.5-5.5-3.9-6.4a2.6 2.6 0 0 0-.6-4.7A1.5 1.5 0 0 0 11 3.6Z"/></svg>
+      </div>
+      <div class="person">
+        <span class="avatar avatar-yasmin" dir="ltr">YH</span>
+        <div>
+          <p class="person-name" dir="ltr">Yasmin Hadi</p>
+          <p class="person-title"><span data-i18n="a02.mgr_title">Engineering Manager ·</span> <bdi dir="ltr">9</bdi> <span data-i18n="a02.reports">reports</span></p>
+        </div>
+      </div>
+      <p class="question" data-i18n="a02.mgr_question">“How is my team doing, who needs support, what should I do?”</p>
+      <dl class="details">
+        <dt data-i18n="a02.label_focus">Focus</dt><dd data-i18n="a02.mgr_focus">My team</dd>
+        <dt data-i18n="a02.label_scope">Data scope</dt><dd data-i18n="a02.mgr_scope">Authorized team data</dd>
+        <dt data-i18n="a02.label_starts">Starts at</dt><dd data-i18n="a02.mgr_starts">Team Overview</dd>
+        <dt data-i18n="a02.label_feel">Feel</dt><dd data-i18n="a02.mgr_feel">Team-focused · actionable · operational</dd>
+      </dl>
+      <a href="#" class="continue">
+        <span data-i18n="a02.mgr_continue">Continue as Yasmin</span>
+        <svg class="flip-in-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="soon-note" data-i18n="a02.soon_note" hidden>This screen is built in the next phase.</p>
+    </article>
+
+    <!-- HR & Executive (dark card) -->
+    <article class="card card-dark" data-card="hr" data-demo="rana">
+      <div class="card-top">
+        <span class="badge" data-i18n="a02.hr_badge">HR &amp; EXECUTIVE</span>
+        <svg class="card-icon icon-teal" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="8.4"/><circle cx="11" cy="11" r="5.3"/></svg>
+      </div>
+      <div class="person">
+        <span class="avatar avatar-rana" dir="ltr">RA</span>
+        <div>
+          <p class="person-name" dir="ltr">Rana Aziz</p>
+          <p class="person-title" data-i18n="a02.hr_title">Chief People Officer</p>
+        </div>
+      </div>
+      <p class="question" data-i18n="a02.hr_question">“How is the organization doing, and what should we change?”</p>
+      <dl class="details">
+        <dt data-i18n="a02.label_focus">Focus</dt><dd data-i18n="a02.hr_focus">The organization</dd>
+        <dt data-i18n="a02.label_scope">Data scope</dt><dd data-i18n="a02.hr_scope">Organization-wide, per governance</dd>
+        <dt data-i18n="a02.label_starts">Starts at</dt><dd data-i18n="a02.hr_starts">Executive Pulse</dd>
+        <dt data-i18n="a02.label_feel">Feel</dt><dd data-i18n="a02.hr_feel">Strategic · analytical · executive</dd>
+      </dl>
+      <a href="#" class="continue">
+        <span data-i18n="a02.hr_continue">Continue as Rana</span>
+        <svg class="flip-in-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <p class="soon-note" data-i18n="a02.soon_note" hidden>This screen is built in the next phase.</p>
+    </article>
+  </section>
+
+  <footer class="summary">
+    <p data-i18n="a02.summary_emp">Employee → Understand me</p>
+    <p data-i18n="a02.summary_mgr">Manager → Support my team</p>
+    <p data-i18n="a02.summary_hr">HR → Improve the organization</p>
+  </footer>
+</main>
+
+<script src="../assets/js/a02-role.js"></script>
+</body>
+</html>

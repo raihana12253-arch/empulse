@@ -1,0 +1,148 @@
+<!doctype html>
+<!-- index.html — A01 Login. The first page of EMPULSE.
+     Design: design/png/A01.jpg
+     Style:  assets/css/shared.css + assets/css/a01-login.css
+     Code:   assets/js/shared.js  + assets/js/a01-login.js -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · EMPULSE</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/a01-login.css">
+  <script src="assets/js/shared.js"></script>
+</head>
+<body data-title="a01.page_title">
+
+<main class="login-page">
+
+  <!-- ========== Left: product story (navy) ========== -->
+  <section class="story">
+    <span class="brand on-dark">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </span>
+      <span class="brand-name" dir="ltr">EMPULSE</span>
+    </span>
+
+    <div class="promise">
+      <p class="overline" data-i18n="a01.overline">EMPLOYEE INTELLIGENCE &amp; DECISION SUPPORT</p>
+      <h1 class="story-title" data-i18n="a01.title">See the people behind the performance.</h1>
+      <p class="story-text" data-i18n="a01.description">EMPULSE connects performance, wellbeing and innovation into one living picture — so you can protect people from burnout, grow talent and measure the value of every decision.</p>
+    </div>
+
+    <!-- Heartbeat line with three example results (numbers from the design) -->
+    <div class="signal" aria-hidden="true">
+      <svg class="signal-grid" viewBox="0 0 700 290" preserveAspectRatio="none">
+        <line x1="0" y1="40" x2="700" y2="40"/><line x1="0" y1="70" x2="700" y2="70"/>
+        <line x1="0" y1="100" x2="700" y2="100"/><line x1="0" y1="130" x2="700" y2="130"/>
+        <line x1="0" y1="160" x2="700" y2="160"/><line x1="0" y1="190" x2="700" y2="190"/>
+        <line x1="0" y1="220" x2="700" y2="220"/>
+      </svg>
+      <svg class="signal-line" viewBox="0 0 700 290"><path id="heartbeat"/></svg>
+
+      <div class="insight insight-1">
+        <span class="insight-icon teal">!</span>
+        <span class="insight-copy">
+          <span class="insight-title"><span data-i18n="a01.insight1_title">Burnout risk</span> <bdi dir="ltr">68% → 45%</bdi></span>
+          <span class="insight-note"><span data-i18n="a01.insight1_note">After workload rebalance ·</span> <bdi dir="ltr">6</bdi> <span data-i18n="a01.weeks">weeks</span></span>
+        </span>
+      </div>
+      <div class="insight insight-2">
+        <span class="insight-icon lavender">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M8 1.8C8.5 5.6 10.4 7.5 14.2 8 10.4 8.5 8.5 10.4 8 14.2 7.5 10.4 5.6 8.5 1.8 8 5.6 7.5 7.5 5.6 8 1.8Z"/></svg>
+        </span>
+        <span class="insight-copy">
+          <span class="insight-title" data-i18n="a01.insight2_title">Idea → implemented</span>
+          <span class="insight-note"><span data-i18n="a01.insight2_note">Self-serve Insight Hub ·</span> <bdi dir="ltr">SAR 180K/yr</bdi></span>
+        </span>
+      </div>
+      <div class="insight insight-3">
+        <span class="insight-icon mint">$</span>
+        <span class="insight-copy">
+          <span class="insight-title"><bdi dir="ltr">SAR 4.2M</bdi> <span data-i18n="a01.insight3_title">expected impact</span></span>
+          <span class="insight-note"><bdi dir="ltr">FY2026</bdi> <span data-i18n="a01.insight3_note">· from</span> <bdi dir="ltr">212</bdi> <span data-i18n="a01.interventions">interventions</span></span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Right: sign-in form ========== -->
+  <section class="signin">
+    <div class="lang-switch top-lang">
+      <button type="button" lang="en">EN</button><span>|</span><button type="button" lang="ar">العربية</button>
+    </div>
+
+    <form id="login-form" class="login-form" novalidate>
+      <div class="welcome">
+        <h2 class="welcome-title" data-i18n="a01.welcome">Welcome back</h2>
+        <p class="welcome-text" data-i18n="a01.welcome_desc">Sign in to your organization's EMPULSE workspace.</p>
+      </div>
+
+      <!-- Shown only when sign-in fails (not in the design, docs/DECISIONS.md D-06) -->
+      <p id="login-error" class="login-error" role="alert" hidden></p>
+
+      <!-- "Create an account" (was "Continue with company SSO", server/docs/DECISIONS.md D-07).
+           For now it opens this same page; later it opens the sign-up page. -->
+      <a href="index.html" id="create-account" class="sso-button">
+        <svg class="sso-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M19 8v6"/><path d="M16 11h6"/></svg>
+        <span data-i18n="a01.create_account">Create an account</span>
+      </a>
+
+      <div class="divider"><span data-i18n="a01.divider">or with work email</span></div>
+
+      <div class="field">
+        <label class="field-label" for="email" data-i18n="a01.email_label">Work email</label>
+        <div class="input-box">
+          <span class="input-icon at">@</span>
+          <input id="email" type="email" dir="ltr" autocomplete="username" placeholder="name@horizon-group.com">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="password" data-i18n="a01.password_label">Password</label>
+        <div class="input-box">
+          <span class="input-icon dot"></span>
+          <input id="password" type="password" dir="ltr" autocomplete="current-password" placeholder="••••••••••">
+        </div>
+      </div>
+
+      <div class="options-row">
+        <label class="checkbox">
+          <input id="remember" type="checkbox" checked>
+          <span class="checkbox-box">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 6.3 5 8.6 9.6 3.6"/></svg>
+          </span>
+          <span class="checkbox-label" data-i18n="a01.remember">Keep me signed in on this device</span>
+        </label>
+        <a class="forgot-link" href="#" id="forgot-link" data-i18n="a01.forgot">Forgot password?</a>
+      </div>
+      <p id="forgot-note" class="forgot-note" data-i18n="a01.forgot_note" hidden>Password reset is handled by your IT administrator in this demo.</p>
+
+      <button type="submit" class="enter-button">
+        <span class="enter-label">
+          <span class="enter-pulse">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10.5 8.6 7.6 9.6 10.4 12.2 7.5"/></svg>
+          </span>
+          <span data-i18n="a01.submit">Enter EMPULSE</span>
+        </span>
+        <svg class="enter-arrow flip-in-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+
+      <div class="trust-box">
+        <p class="trust-title">
+          <svg class="trust-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.8 9.6c.9.8 1.9 2.1 2.6 3.4C7.2 8.6 10 4.9 13.6 2.6"/></svg>
+          <span data-i18n="a01.trust_title">Built on trust</span>
+        </p>
+        <p class="trust-text" data-i18n="a01.trust_text">EMPULSE never reads message content, keystrokes or screens. Insights come from work outcomes, workload signals and voluntary check-ins — and every AI recommendation is reviewed by a person.</p>
+      </div>
+
+      <p class="security-note" data-i18n="a01.security">Encrypted in transit &amp; at rest · Role-based access · Responsible AI charter v2.1</p>
+    </form>
+  </section>
+</main>
+
+<script src="assets/js/a01-login.js"></script>
+</body>
+</html>

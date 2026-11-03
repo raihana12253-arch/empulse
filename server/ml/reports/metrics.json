@@ -1,0 +1,36 @@
+{
+  "burnout": {
+    "n_train": 3600,
+    "n_calibration": 900,
+    "n_test": 1500,
+    "prevalence_test": 0.221,
+    "auc": 0.809,
+    "accuracy_at_0.5": 0.811,
+    "best_f1_threshold": 0.252,
+    "precision_at_best_f1": 0.483,
+    "recall_at_best_f1": 0.714,
+    "f1_at_best": 0.576,
+    "brier": 0.1327,
+    "top_decile_lift": 3.16
+  },
+  "attrition": {
+    "n_train": 3600,
+    "n_calibration": 900,
+    "n_test": 1500,
+    "prevalence_test": 0.133,
+    "auc": 0.73,
+    "accuracy_at_0.5": 0.863,
+    "best_f1_threshold": 0.172,
+    "precision_at_best_f1": 0.305,
+    "recall_at_best_f1": 0.593,
+    "f1_at_best": 0.403,
+    "brier": 0.1057,
+    "top_decile_lift": 2.76
+  },
+  "ibm_benchmark": {
+    "rows": 1470,
+    "leavers": 237,
+    "cv_auc_mean": 0.806,
+    "cv_auc_std": 0.049
+  }
+}

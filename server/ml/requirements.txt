@@ -1,0 +1,11 @@
+# Exact versions the saved models (server/ml/models/*.pkl) were trained with.
+# Use Python 3.12. Anything that loads the models (the scripts here, the ML service later)
+# MUST install these same scikit-learn / numpy / pandas / joblib versions.
+#   py -3.12 -m pip install -r server/ml/requirements.txt
+scikit-learn==1.9.1
+numpy==2.5.3
+pandas==3.0.5
+joblib==1.6.0
+# only for the analysis notebook / reports
+matplotlib==3.11.2
+openpyxl

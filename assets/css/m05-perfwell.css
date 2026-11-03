@@ -1,0 +1,30 @@
+/* m05-perfwell.css — M05 Performance–Wellbeing. */
+section.card.sumbar { display: flex !important; flex-direction: row !important; align-items: center; justify-content: flex-start; gap: 40px; flex-wrap: wrap; text-align: start; }
+.sumbar .st { align-items: flex-start; text-align: start; display: flex; flex-direction: column; gap: 2px; }
+.sumbar .st .mono { font: 400 10.5px "DM Mono", "Noto Sans Arabic", monospace; letter-spacing: .06em; color: var(--muted); }
+.sumbar .st b { font-size: 34px; font-weight: 500; line-height: 40px; } .sumbar .st small { color: var(--muted); font-size: 13px; }
+.sumbar .hint { flex: 1; min-width: 260px; margin: 0; color: var(--muted); font-size: 14px; line-height: 22px; }
+.teamchip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; font-size: 14.5px; }
+.teamchip svg { width: 16px; height: 16px; }
+.qtabs { display: flex; gap: 10px; flex-wrap: wrap; }
+.qt { border: 1px solid var(--border); background: var(--white); border-radius: 10px; padding: 9px 16px; font: inherit; font-size: 14.5px; cursor: pointer; color: var(--ink); display: inline-flex; gap: 22px; align-items: center; }
+.qt b { font-weight: 500; color: var(--muted); font-size: 13px; }
+.qt.on { border-color: var(--coral); } .qt.on.q-thriving { border-color: var(--teal); } .qt.on.q-development { border-color: #f59e0b; } .qt.on.q-critical { border-color: #c2392b; }
+.m05-main { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: start; }
+.plot { padding: 12px; }
+.mx { width: 100%; height: auto; direction: ltr; display: block; }
+.mx .qr { cursor: pointer; } .mx .ql { font: 600 16px var(--font-latin); } .mx .qd { fill: #64748b; font: 400 12.5px var(--font-latin); }
+.mx .ax { fill: #64748b; font: 400 11px "DM Mono", monospace; letter-spacing: .08em; }
+.mx .ni { fill: #0f172a; font: 600 11.5px var(--font-latin); pointer-events: none; } .mx .nd { cursor: pointer; } .mx .arc-l { font: 400 10.5px "DM Mono", monospace; letter-spacing: .06em; }
+.col { display: flex; flex-direction: column; gap: 20px; }
+.grp h2 { display: flex; align-items: center; gap: 10px; font-size: 20px; } .grp h2 small { color: var(--muted); font-weight: 400; font-size: 12px; margin-inline-start: 14px; } .gd { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.grp .desc { color: var(--muted); font-size: 15px; line-height: 24px; margin: 6px 0 12px; }
+.pr { display: flex; align-items: center; gap: 12px; padding: 12px 8px; border-top: 1px solid var(--surface3); text-decoration: none; color: inherit; border-radius: 8px; }
+.pr.cur { background: var(--surface3); }
+.pr .av { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font: 600 12.5px var(--font-latin); background: #fbd9d4; flex: 0 0 40px; }
+.pr .av.q-thriving { background: #d7f0ea; } .pr .av.q-development { background: #fdebd3; } .pr .av.q-critical { background: #f6c9c3; }
+.pr .nm { flex: 1; min-width: 0; } .pr .nm b { display: block; font-size: 15.5px; } .pr .nm small { color: var(--muted); font-size: 13px; }
+.pr .pw { font: 400 12.5px "DM Mono", monospace; color: var(--muted); }
+.pb { border-top: 3px solid var(--teal); } .pb .kick { display: flex; gap: 8px; align-items: center; color: var(--teal-dark); font-weight: 600; font-size: 14px; } .pb .kick svg { width: 14px; height: 14px; }
+.pb h3 { font-size: 19px; line-height: 27px; } .pb .stat { color: var(--muted); font-size: 15px; margin: 0; }
+@media (max-width: 1250px) { .m05-main { grid-template-columns: 1fr; } }

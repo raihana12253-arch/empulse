@@ -1,0 +1,52 @@
+/* e10-reports.css — E10 My Reports: list | report card | export. */
+.rep-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr) 260px; gap: 24px; padding: 0 32px 32px; align-items: start; }
+.cap { font: 400 10.5px/14px "DM Mono", "Noto Sans Arabic", monospace; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; font-weight: 400; margin-bottom: 12px; }
+.muted { color: var(--muted); font-size: 13.5px; line-height: 21px; }
+.rep-item { display: flex; align-items: center; gap: 12px; width: 100%; text-align: start; padding: 12px 14px; border-radius: 10px; font-size: 14px; color: var(--ink); }
+.rep-item span { width: 15px; height: 15px; flex: 0 0 15px; display: block; color: var(--muted); }
+.rep-item svg { width: 15px; height: 15px; display: block; }
+.rep-item:hover { background: var(--surface3); }
+.rep-item.on { background: var(--teal-light); color: var(--teal-dark); font-weight: 600; }
+.rep-item.on span { color: var(--teal-dark); }
+.paper { padding: 36px 40px; gap: 18px; }
+.paper-top { display: flex; justify-content: space-between; align-items: center; }
+.paper-top .mono { font-size: 12px; }
+.kicker { font-size: 12px; color: var(--teal-dark); letter-spacing: .1em; }
+.paper h2.headline { font-size: 30px; line-height: 40px; font-weight: 600; letter-spacing: -.02em; max-width: 620px; }
+.paper h2.rtitle { font-size: 26px; font-weight: 600; letter-spacing: -.02em; }
+.score-row { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; background: var(--surface); border-radius: 12px; padding: 14px 18px; }
+.score-band { flex: 1 1 260px; min-width: 240px; }
+.score-box { display: flex; align-items: center; gap: 14px; }
+.circle { width: 52px; height: 52px; border-radius: 50%; background: var(--navy); color: var(--white); display: grid; place-items: center; font-size: 19px; font-weight: 600; flex: 0 0 52px; border: 3px solid #e3e9ef; }
+.score-box > div { display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+.score-box .mono { font-size: 11px; letter-spacing: .12em; }
+.score-box .up { color: var(--teal-dark); font-weight: 600; font-size: 12px; }
+.secs { border-top: 1px solid var(--border); margin-top: 6px; }
+.sec { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.sec b { font-size: 16px; font-weight: 600; }
+.sec p { font-size: 16px; line-height: 24px; }
+.paper-foot { text-align: center; color: var(--faint); font-size: 13.5px; padding-top: 8px; }
+.rep-side { display: flex; flex-direction: column; gap: 20px; }
+.rep-side h2 { display: flex; align-items: center; gap: 10px; }
+.rep-side h2 svg { width: 14px; height: 14px; color: var(--teal); }
+.btn.wide { width: 100%; justify-content: center; height: 50px; }
+.btn .dl { width: 22px; height: 22px; border-radius: 6px; background: var(--teal); color: var(--white); display: grid; place-items: center; }
+.btn .dl svg { width: 12px; height: 12px; color: var(--white); }
+.btn.primary svg:last-child { color: var(--white); }
+.shared { font-size: 12.5px; color: var(--teal-dark); }
+.rl { padding: 14px 0; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+.rl p { font-size: 14.5px; }
+.rl.sk { flex-direction: row; align-items: center; gap: 14px; }
+.rl.sk > span:first-child { flex: 0 0 180px; }
+.bar { flex: 1; height: 8px; background: var(--surface3); border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--navy); }
+.rt { width: 100%; border-collapse: collapse; }
+.rt th { text-align: start; font: 400 10.5px "DM Mono", "Noto Sans Arabic", monospace; letter-spacing: .08em; color: var(--muted); padding: 8px; border-bottom: 1px solid var(--border); }
+.rt td { padding: 12px 8px; border-bottom: 1px solid var(--surface3); }
+@media (max-width: 1250px) { .rep-layout { grid-template-columns: 240px minmax(0, 1fr); } .rep-side { grid-column: 1 / -1; flex-direction: row; } .rep-side > * { flex: 1; } }
+@media (max-width: 860px) { .rep-layout { grid-template-columns: 1fr; padding-inline: 20px; } .score-row, .sec { grid-template-columns: 1fr; } .rep-side { flex-direction: column; } .paper { padding: 22px; } }
+@media print {
+  .sidebar, .topbar, .page-header, .rep-list, .rep-side, .toast { display: none !important; }
+  .rep-layout { display: block; padding: 0; }
+  .paper { box-shadow: none; border: 0; }
+}

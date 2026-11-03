@@ -16,8 +16,8 @@ const APP = '/empulse/';
 // The first screen of each role, and whether it is built yet.
 // When a screen is finished, write its file here and set ready: true.
 const HOME = {
-  employee:  { screen: 'E01', file: 'pages/employee/overview.html', ready: false },
-  manager:   { screen: 'M01', file: 'pages/manager/overview.html',  ready: false },
+  employee:  { screen: 'E01', file: 'pages/employee/overview.html', ready: true },
+  manager:   { screen: 'M01', file: 'pages/manager/overview.html',  ready: true },
   hr:        { screen: 'H01', file: 'pages/hr/executive.html',      ready: false },
   executive: { screen: 'H01', file: 'pages/hr/executive.html',      ready: false },
   admin:     { screen: 'H01', file: 'pages/hr/executive.html',      ready: false },
@@ -101,6 +101,25 @@ function t(key) {
   return texts[key] || key;
 }
 
+// A text with values inside:  tf('e01.greeting', {name: 'Layla'})  for  "Good morning, {name}".
+function tf(key, params) {
+  let text = texts[key] || key;
+  Object.keys(params || {}).forEach(function (name) {
+    text = text.split('{' + name + '}').join(params[name]);
+  });
+  return text;
+}
+
+// Put the texts into every element that has data-i18n (also used after a page draws new parts).
+function applyTexts(root) {
+  (root || document).querySelectorAll('[data-i18n]').forEach(function (element) {
+    const key = element.dataset.i18n;
+    if (texts[key]) {
+      element.textContent = texts[key];
+    }
+  });
+}
+
 // Load the language file and put the texts into the page.
 async function loadTexts() {
   try {
@@ -110,12 +129,7 @@ async function loadTexts() {
     texts = {};            // file missing: keep the English text that is in the HTML
   }
 
-  document.querySelectorAll('[data-i18n]').forEach(function (element) {
-    const key = element.dataset.i18n;
-    if (texts[key]) {
-      element.textContent = texts[key];
-    }
-  });
+  applyTexts(document);
 
   if (texts[document.body.dataset.title]) {
     document.title = texts[document.body.dataset.title];

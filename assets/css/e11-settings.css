@@ -1,0 +1,30 @@
+/* e11-settings.css — E11 Settings: privacy toggles | who can see what, then the score weights. */
+.set-top { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.ch { display: flex; gap: 12px; align-items: flex-start; }
+.ch > svg { width: 22px; height: 22px; flex: 0 0 22px; color: var(--teal); }
+.ch h2 { font-size: 17px; }
+.sub.teal { color: var(--teal-dark); }
+.toggles { display: flex; flex-direction: column; }
+.trow { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--surface3); font-size: 15px; }
+.trow:last-child { border-bottom: 0; }
+.trow small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--faint); }
+.switch { flex: 0 0 52px; width: 52px; height: 30px; border-radius: 15px; background: #cbd5e1; position: relative; transition: background .15s; }
+.switch i { position: absolute; top: 3px; inset-inline-start: 3px; width: 24px; height: 24px; border-radius: 50%; background: var(--white); transition: inset-inline-start .15s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.switch.on { background: var(--teal); }
+.switch.on i { inset-inline-start: 25px; }
+.switch.locked { opacity: .85; cursor: not-allowed; }
+.who { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.who li { display: flex; gap: 12px; }
+.who .pawn { width: 16px; height: 16px; flex: 0 0 16px; color: var(--ink); margin-top: 3px; }
+.who .pawn svg { width: 16px; height: 16px; display: block; }
+.who b { font-size: 15px; font-weight: 600; display: block; }
+.who small { font-size: 13.5px; color: var(--muted); }
+.dlall { display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border); padding-top: 14px; font-size: 14.5px; }
+.dlall svg { width: 14px; height: 14px; color: var(--muted); }
+.weights { display: flex; flex-direction: column; gap: 14px; }
+.wrow { display: grid; grid-template-columns: 290px 1fr 48px; gap: 18px; align-items: center; font-size: 15px; }
+.wrow .track { height: 8px; background: var(--surface3); border-radius: 4px; overflow: hidden; display: block; }
+.wrow .track i { display: block; height: 100%; background: var(--navy); border-radius: 4px; }
+.wrow b { font-weight: 600; text-align: end; font-size: 14px; }
+.note.faint { color: var(--faint); font-size: 13.5px; }
+@media (max-width: 1000px) { .set-top { grid-template-columns: 1fr; } .wrow { grid-template-columns: 150px 1fr 44px; } }

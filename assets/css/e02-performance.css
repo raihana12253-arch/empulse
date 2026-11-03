@@ -1,0 +1,64 @@
+/* e02-performance.css — My Performance */
+.row-calc { grid-template-columns: 400px minmax(0, 1fr); }
+.row-identity { grid-template-columns: minmax(0, 400fr) minmax(0, 708fr); }
+.column { display: flex; flex-direction: column; gap: 16px; }
+.mono { font-family: "DM Mono", "Noto Sans Arabic", monospace; }
+.flash { box-shadow: 0 0 0 3px var(--teal); transition: box-shadow .3s; }
+.note-card { flex-direction: row; align-items: flex-start; gap: 10px; background: var(--teal-light); border-color: #bfe8e2; box-shadow: none; }
+.note-card p { font-size: 12.5px; line-height: 19px; color: var(--teal-dark); }
+.note-card .ok { flex: 0 0 18px; width: 18px; height: 18px; color: var(--teal-dark); }
+.note-card .ok svg { width: 18px; height: 18px; }
+
+.formula { display: flex; align-items: center; justify-content: space-between; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+.formula .mono { font-size: 12px; color: var(--muted); }
+.formula b { font-size: 22px; font-weight: 600; }
+.calc-table table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.calc-table th { text-align: start; font: 400 10.5px/14px "DM Mono", "Noto Sans Arabic", monospace; letter-spacing: .08em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--border); }
+.calc-table td { padding: 10px 8px; border-bottom: 1px solid var(--surface3); }
+.calc-table td:nth-child(n+2) { font-family: "DM Mono", monospace; }
+.calc-table tr:last-child td { border-bottom: 0; }
+.note { font-size: 12px; color: var(--muted); line-height: 18px; }
+
+.identity-card { gap: 10px; }
+.identity-score { display: flex; align-items: baseline; gap: 12px; }
+.identity-score b { font-size: 48px; font-weight: 600; line-height: 1; }
+.chip-up { font-size: 13px; font-weight: 600; color: #7ee2d2; }
+.tier-word { font-size: 11px; letter-spacing: .12em; color: var(--mint); }
+.identity-card h2 { color: var(--white); font-size: 18px; }
+.identity-card p { font-size: 13px; line-height: 20px; color: rgba(255,255,255,.75); }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.bars { display: flex; align-items: flex-end; gap: 14px; height: 150px; }
+.bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; }
+.bar-col i { display: block; width: 100%; max-width: 54px; background: var(--border-blue); border-radius: 8px 8px 0 0; }
+.bar-col i.now { background: var(--teal); }
+.bar-col b { font-size: 13px; font-weight: 600; }
+.bar-col span { font-size: 10.5px; color: var(--muted); }
+
+.trends { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 13.5px; align-items: center; }
+.trend span { color: var(--muted); }
+.trend b { font-weight: 600; }
+.dotsep { color: var(--faint); }
+.arrow { font-style: normal; font-weight: 700; }
+.arrow.up { color: var(--teal-dark); }
+.arrow.down { color: var(--coral-dark); }
+.arrow.flat { color: var(--muted); }
+
+.planner-body { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.sliders { display: flex; flex-direction: column; gap: 14px; }
+.slider-top { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 4px; }
+.slider-top .mono { font-size: 11.5px; color: var(--teal-dark); }
+.slider { width: 100%; accent-color: var(--teal); }
+.projection { background: var(--navy); color: var(--white); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.projection .small { font-size: 10.5px; letter-spacing: .12em; color: rgba(255,255,255,.6); }
+.projection .big { font-size: 48px; font-weight: 600; line-height: 1; }
+.projection .tier-word { color: var(--mint); }
+.projection .tier-word.gold { color: #f1d38a; }
+.advice { display: flex; align-items: center; gap: 12px; background: var(--violet-light); border-radius: 12px; padding: 12px 14px; }
+.advice-icon { flex: 0 0 20px; width: 20px; height: 20px; color: var(--violet); }
+.advice-icon svg { width: 20px; height: 20px; }
+.advice p { flex: 1; font-size: 13px; line-height: 19px; }
+
+@media (max-width: 1100px) {
+  .row-calc, .row-identity, .planner-body { grid-template-columns: minmax(0, 1fr); }
+}
